@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b1220">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="VendasPro">
+<link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%22VendasPro%20%E2%80%94%20CRM%20Vendas%20%26%20Afiliados%22%2C%22short_name%22%3A%22VendasPro%22%2C%22description%22%3A%22Gest%C3%A3o%20de%20vendas%2C%20dropshipping%2C%20afiliados%20e%20importa%C3%A7%C3%A3o%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%230b1220%22%2C%22theme_color%22%3A%22%236366f1%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22data%3Aimage%2Fsvg%2Bxml%2C%253Csvg%2520xmlns%253D%2522http%253A%252F%252Fwww.w3.org%252F2000%252Fsvg%2522%2520viewBox%253D%25220%25200%2520512%2520512%2522%253E%253Cdefs%253E%253ClinearGradient%2520id%253D%2522g%2522%2520x1%253D%25220%2522%2520y1%253D%25220%2522%2520x2%253D%25221%2522%2520y2%253D%25221%2522%253E%253Cstop%2520offset%253D%25220%2522%2520stop-color%253D%2522%25236366f1%2522%252F%253E%253Cstop%2520offset%253D%25221%2522%2520stop-color%253D%2522%2523a855f7%2522%252F%253E%253C%252FlinearGradient%253E%253C%252Fdefs%253E%253Crect%2520width%253D%2522512%2522%2520height%253D%2522512%2522%2520rx%253D%2522112%2522%2520fill%253D%2522url(%2523g)%2522%252F%253E%253Ctext%2520x%253D%2522256%2522%2520y%253D%2522330%2522%2520font-family%253D%2522Arial%252C%2520sans-serif%2522%2520font-size%253D%2522240%2522%2520font-weight%253D%2522bold%2522%2520fill%253D%2522%2523fff%2522%2520text-anchor%253D%2522middle%2522%253EV%253C%252Ftext%253E%253C%252Fsvg%253E%22%2C%22sizes%22%3A%22any%22%2C%22type%22%3A%22image%2Fsvg%2Bxml%22%2C%22purpose%22%3A%22any%22%7D%5D%7D">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20512%20512%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%236366f1%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23a855f7%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22512%22%20height%3D%22512%22%20rx%3D%22112%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%22256%22%20y%3D%22330%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%22240%22%20font-weight%3D%22bold%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3EV%3C%2Ftext%3E%3C%2Fsvg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20512%20512%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%236366f1%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23a855f7%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22512%22%20height%3D%22512%22%20rx%3D%22112%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%22256%22%20y%3D%22330%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%22240%22%20font-weight%3D%22bold%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3EV%3C%2Ftext%3E%3C%2Fsvg%3E">
+<title>VendasPro — CRM de Vendas</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  :root { --bg:#0b1220; --card:#151e31; --card2:#1b2640; --line:#26324d; --txt:#e8edf7; --mut:#93a0bd; --acc:#6366f1; --acc2:#a855f7; --ok:#10b981; --warn:#f59e0b; --bad:#ef4444; --info:#38bdf8; }
+  html, body { height: 100%; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--txt); padding-bottom: 76px; overscroll-behavior-y: none; }
+  header { position: sticky; top: 0; z-index: 20; background: linear-gradient(135deg, #101a30, #151e31); border-bottom: 1px solid var(--line); padding: 14px 16px 12px; display: flex; align-items: center; gap: 12px; }
+  .logo { width: 40px; height: 40px; border-radius: 12px; flex: none; background: linear-gradient(135deg, var(--acc), var(--acc2)); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 20px; color: #fff; }
+  header h1 { font-size: 17px; font-weight: 700; line-height: 1.15; }
+  header p { font-size: 11.5px; color: var(--mut); }
+  main { padding: 14px 14px 20px; max-width: 640px; margin: 0 auto; }
+  .tab { display: none; } .tab.active { display: block; animation: fade .18s ease; }
+  @keyframes fade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 14px; margin-bottom: 12px; }
+  .kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .kpi { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 14px; position: relative; overflow: hidden; }
+  .kpi .lbl { font-size: 11px; color: var(--mut); text-transform: uppercase; letter-spacing: .4px; }
+  .kpi .val { font-size: 21px; font-weight: 800; margin-top: 4px; }
+  .kpi .sub { font-size: 11px; color: var(--mut); margin-top: 2px; }
+  .kpi.accent { background: linear-gradient(135deg, #312e81, #4c1d95); border-color: #4f46e5; } .kpi.accent .val { color: #fff; }
+  .kpi .dot { position: absolute; right: -18px; top: -18px; width: 70px; height: 70px; border-radius: 50%; background: rgba(255,255,255,.06); }
+  h2 { font-size: 15px; font-weight: 700; margin: 4px 0 10px; display: flex; align-items: center; gap: 8px; }
+  h2 .badge { font-size: 11px; font-weight: 600; background: rgba(99,102,241,.18); color: #a5b4fc; padding: 2px 8px; border-radius: 99px; }
+  .row { display: flex; align-items: center; gap: 10px; } .grow { flex: 1; min-width: 0; }
+  .mut { color: var(--mut); font-size: 12px; } .small { font-size: 12px; }
+  .price { font-weight: 800; color: #c7d2fe; } .up { color: var(--ok); } .down { color: var(--bad); }
+  .badge { display: inline-block; font-size: 10.5px; font-weight: 700; padding: 3px 9px; border-radius: 99px; text-transform: uppercase; letter-spacing: .3px; }
+  .b-novo { background: rgba(56,189,248,.15); color: var(--info); }
+  .b-pago, .b-paga, .b-enviado, .b-entregue { background: rgba(16,185,129,.15); color: var(--ok); }
+  .b-pendente { background: rgba(245,158,11,.15); color: var(--warn); }
+  .b-cancelado, .b-cancelada { background: rgba(239,68,68,.15); color: var(--bad); }
+  .b-processado { background: rgba(148,163,184,.15); color: #cbd5e1; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; background: linear-gradient(135deg, var(--acc), var(--acc2)); color: #fff; border: none; border-radius: 12px; padding: 11px 16px; font-size: 14px; font-weight: 700; cursor: pointer; width: 100%; }
+  .btn.ghost { background: transparent; border: 1px solid var(--line); color: var(--txt); font-weight: 600; }
+  .btn.sm { width: auto; padding: 7px 12px; font-size: 12.5px; border-radius: 10px; }
+  input, select, textarea { width: 100%; background: var(--card2); border: 1px solid var(--line); color: var(--txt); border-radius: 12px; padding: 12px; font-size: 14px; font-family: inherit; }
+  input:focus, select:focus { outline: 2px solid var(--acc); outline-offset: 0; }
+  label { display: block; font-size: 12px; color: var(--mut); margin: 10px 0 5px; }
+  .search { position: relative; margin-bottom: 10px; } .search input { padding-left: 38px; }
+  .search .ic { position: absolute; left: 13px; top: 50%; transform: translateY(-50%); color: var(--mut); font-size: 15px; }
+  .chips { display: flex; gap: 7px; overflow-x: auto; padding-bottom: 6px; margin-bottom: 10px; -webkit-overflow-scrolling: touch; }
+  .chip { flex: none; font-size: 12px; padding: 6px 12px; border-radius: 99px; background: var(--card2); border: 1px solid var(--line); color: var(--mut); cursor: pointer; }
+  .chip.on { background: rgba(99,102,241,.2); border-color: var(--acc); color: #c7d2fe; font-weight: 600; }
+  .prod { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 13px; margin-bottom: 10px; }
+  .prod .top { display: flex; justify-content: space-between; gap: 8px; }
+  .prod .nome { font-weight: 700; font-size: 14.5px; }
+  .prod .nicho { font-size: 11px; color: var(--acc2); font-weight: 600; text-transform: uppercase; letter-spacing: .4px; }
+  .prod .desc { font-size: 12px; color: var(--mut); margin: 6px 0 8px; }
+  .prod .meta { display: flex; justify-content: space-between; align-items: center; }
+  .prod .forn { font-size: 10.5px; color: var(--mut); } .margem { font-size: 11px; font-weight: 700; color: var(--ok); }
+  .pedido { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 13px; margin-bottom: 10px; }
+  .pedido .top { display: flex; justify-content: space-between; align-items: center; }
+  .pedido .num { font-weight: 800; font-size: 13px; color: #c7d2fe; }
+  .pedido .prod { font-weight: 600; font-size: 14px; margin-top: 6px; }
+  .pedido .det { font-size: 12px; color: var(--mut); margin-top: 4px; }
+  .pedido .foot { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; }
+  .statusbar { display: flex; gap: 5px; margin-top: 10px; flex-wrap: wrap; }
+  .statusbar .btn.sm { flex: 1; min-width: 74px; padding: 6px 4px; font-size: 11px; }
+  .cliente { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 13px; margin-bottom: 10px; }
+  .cliente .nome { font-weight: 700; font-size: 14.5px; }
+  .cliente .det { font-size: 12px; color: var(--mut); margin-top: 3px; }
+  .cliente .stats { display: flex; gap: 14px; margin-top: 10px; } .cliente .stats b { font-size: 15px; }
+  .fatura { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 13px; margin-bottom: 10px; }
+  .fatura .top { display: flex; justify-content: space-between; align-items: center; }
+  .fatura .num { font-weight: 800; font-size: 13px; color: #c7d2fe; }
+  .fatura .det { font-size: 12px; color: var(--mut); margin-top: 4px; }
+  .fatura .val { font-weight: 800; font-size: 16px; margin-top: 8px; }
+  .afiliado { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 13px; margin-bottom: 10px; }
+  .afiliado .nome { font-weight: 700; } .afiliado .det { font-size: 12px; color: var(--mut); margin-top: 4px; }
+  .afiliado .val { font-weight: 800; font-size: 16px; margin-top: 8px; color: var(--warn); }
+  .empty { text-align: center; color: var(--mut); padding: 30px 10px; font-size: 13px; }
+  .modal-bg { position: fixed; inset: 0; background: rgba(4,8,18,.72); z-index: 40; display: none; align-items: flex-end; justify-content: center; }
+  .modal-bg.open { display: flex; }
+  .modal { background: var(--card); border: 1px solid var(--line); border-top-left-radius: 22px; border-top-right-radius: 22px; width: 100%; max-width: 640px; max-height: 88vh; overflow-y: auto; padding: 18px 16px 24px; animation: up .22s ease; }
+  @keyframes up { from { transform: translateY(40px); opacity: 0; } to { transform: none; opacity: 1; } }
+  .modal h3 { font-size: 16px; margin-bottom: 4px; }
+  .modal .close { float: right; background: none; border: none; color: var(--mut); font-size: 22px; cursor: pointer; line-height: 1; }
+  .modal .btn { margin-top: 16px; }
+  nav { position: fixed; bottom: 0; left: 0; right: 0; z-index: 30; background: rgba(13,19,34,.96); backdrop-filter: blur(12px); border-top: 1px solid var(--line); display: flex; padding: 6px 4px calc(8px + env(safe-area-inset-bottom)); }
+  nav button { flex: 1; background: none; border: none; color: var(--mut); display: flex; flex-direction: column; align-items: center; gap: 2px; font-size: 10px; font-weight: 600; padding: 6px 2px; cursor: pointer; }
+  nav button .ic { font-size: 20px; line-height: 1; }
+  nav button.on { color: #a5b4fc; } nav button.on .ic { transform: scale(1.08); }
+  .toast { position: fixed; left: 50%; bottom: 92px; transform: translateX(-50%); background: #1e293b; color: #fff; font-size: 13px; font-weight: 600; padding: 10px 18px; border-radius: 99px; z-index: 60; display: none; box-shadow: 0 8px 24px rgba(0,0,0,.4); }
+  .toast.show { display: block; animation: fade .2s ease; }
+  .link { color: var(--info); font-weight: 600; cursor: pointer; }
+  .divider { height: 1px; background: var(--line); margin: 12px 0; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">V</div>
+  <div class="grow"><h1>VendasPro</h1><p>CRM de vendas · afiliados · dropshipping</p></div>
+  <span class="badge b-pago">online</span>
+</header>
+<main>
+  <section class="tab active" id="tab-inicio"></section>
+  <section class="tab" id="tab-produtos"></section>
+  <section class="tab" id="tab-pedidos"></section>
+  <section class="tab" id="tab-clientes"></section>
+  <section class="tab" id="tab-faturas"></section>
+  <section class="tab" id="tab-afiliados"></section>
+</main>
+<nav>
+  <button data-tab="inicio" class="on"><span class="ic">🏠</span>Início</button>
+  <button data-tab="produtos"><span class="ic">📦</span>Produtos</button>
+  <button data-tab="pedidos"><span class="ic">🧾</span>Pedidos</button>
+  <button data-tab="clientes"><span class="ic">👥</span>Clientes</button>
+  <button data-tab="faturas"><span class="ic">💳</span>Faturas</button>
+</nav>
+<div class="modal-bg" id="modal"><div class="modal" id="modalBody"></div></div>
+<div class="toast" id="toast"></div>
+<script>
+var PRODUTOS = [{"nome":"Levitating Floating Shelf","nicho":"Home Decor","descricao":"Prateleira flutuante levitante para decoração de ambientes.","fornecedores":"AliExpress, CJdropshipping","custoUsd":11,"precoUsd":50,"custoBrl":105.88,"precoBrl":179.99,"lucroBrl":74.12,"margem":41},{"nome":"Yoga mats","nicho":"Health/Personal Care","descricao":"Tapetes de yoga antiderrapantes para prática de exercícios.","fornecedores":"AliExpress, CJdropshipping","custoUsd":15,"precoUsd":40,"custoBrl":144.38,"precoBrl":249.99,"lucroBrl":105.62,"margem":42},{"nome":"Wireless earbuds","nicho":"Electronics","descricao":"Fones de ouvido sem fio com alta qualidade de som.","fornecedores":"AliExpress, Alibaba","custoUsd":20,"precoUsd":100,"custoBrl":192.5,"precoBrl":329.99,"lucroBrl":137.49,"margem":42},{"nome":"Magnetic charging cable","nicho":"Electronics","descricao":"Cabo de carregamento magnético compatível com vários dispositivos.","fornecedores":"AliExpress","custoUsd":3.5,"precoUsd":11.5,"custoBrl":33.69,"precoBrl":59.99,"lucroBrl":26.3,"margem":44},{"nome":"Silicone Suction Plate Set","nicho":"Baby & Kids","descricao":"Conjunto de pratos de silicone com ventosa para crianças.","fornecedores":"CJdropshipping, AliExpress","custoUsd":6.5,"precoUsd":20,"custoBrl":62.56,"precoBrl":109.99,"lucroBrl":47.43,"margem":43},{"nome":"Foldable Baby Bathtub","nicho":"Baby & Kids","descricao":"Banheira dobrável para banho de bebês.","fornecedores":"AliExpress, Oberlo/Shopify","custoUsd":12.5,"precoUsd":40,"custoBrl":120.31,"precoBrl":209.99,"lucroBrl":89.68,"margem":43},{"nome":"Portable UV Sterilizer Box","nicho":"Baby & Kids","descricao":"Caixa portátil de esterilização UV para objetos pessoais.","fornecedores":"AliExpress","custoUsd":10,"precoUsd":27.5,"custoBrl":96.25,"precoBrl":169.99,"lucroBrl":73.74,"margem":43},{"nome":"Sunset Projection Lamp","nicho":"Home & Living","descricao":"Lâmpada de projeção de pôr do sol para decoração.","fornecedores":"AliExpress, CJdropshipping","custoUsd":12.5,"precoUsd":32.5,"custoBrl":120.31,"precoBrl":209.99,"lucroBrl":89.68,"margem":43},{"nome":"Smart Light Bulbs","nicho":"Smart Home","descricao":"Lâmpadas inteligentes controláveis via aplicativo.","fornecedores":"AliExpress, Alibaba","custoUsd":12.5,"precoUsd":32.5,"custoBrl":120.31,"precoBrl":209.99,"lucroBrl":89.68,"margem":43},{"nome":"Smart Plugs","nicho":"Smart Home","descricao":"Tomadas inteligentes para controle remoto de dispositivos.","fornecedores":"AliExpress","custoUsd":10,"precoUsd":25,"custoBrl":96.25,"precoBrl":169.99,"lucroBrl":73.74,"margem":43},{"nome":"Security Cameras","nicho":"Smart Home","descricao":"Câmeras de segurança para monitoramento residencial.","fornecedores":"Alibaba, AliExpress","custoUsd":32.5,"precoUsd":80,"custoBrl":312.81,"precoBrl":529.99,"lucroBrl":217.18,"margem":41},{"nome":"Red Light Therapy Face Masks","nicho":"Beauty","descricao":"Máscaras faciais de terapia com luz vermelha para cuidados de pele.","fornecedores":"AliExpress, CJdropshipping","custoUsd":21.5,"precoUsd":74,"custoBrl":206.94,"precoBrl":349.99,"lucroBrl":143.05,"margem":41},{"nome":"Weighted Dinosaur Plushies","nicho":"Toys","descricao":"Pelúcias de dinossauro pesadas para crianças.","fornecedores":"AliExpress","custoUsd":10.5,"precoUsd":40,"custoBrl":101.06,"precoBrl":169.99,"lucroBrl":68.93,"margem":41},{"nome":"Silicone Air Fryer Liners","nicho":"Kitchen","descricao":"Forros de silicone para fritadeiras sem óleo.","fornecedores":"AliExpress","custoUsd":4.5,"precoUsd":20,"custoBrl":43.31,"precoBrl":79.99,"lucroBrl":36.68,"margem":46},{"nome":"Pet bed","nicho":"Pets","descricao":"Cama confortável para pets de todos os tamanhos.","fornecedores":"AliExpress, Alibaba","custoUsd":12.5,"precoUsd":40,"custoBrl":120.31,"precoBrl":209.99,"lucroBrl":89.68,"margem":43}];
+var PEDIDOS_INI = [{"id":"p1","numero":"PED-88423951","produto":"Wireless earbuds","quantidade":2,"precoUnitario":329.99,"total":659.98,"custoTotal":385,"lucro":274.98,"cliente":"Maria Silva","email":"maria.silva@email.com","afiliado":"afiliado_joao","status":"pago","data":"2026-10-29T15:40:23.951Z"}];
+var CLIENTES_INI = [{"id":"c1","nome":"Maria Silva","email":"maria.silva@email.com","telefone":"(11) 98765-4321","cidade":"São Paulo - SP","origem":"afiliado_joao","status":"ativo","totalGasto":659.98,"numPedidos":1,"dataCadastro":"2026-10-29T15:16:47.921Z"}];
+var FATURAS_INI = [{"id":"f1","numero":"FAT-91775620","pedido":"PED-88423951","cliente":"Maria Silva","valor":659.98,"vencimento":"2026-11-05T16:36:15.618Z","forma":"PIX","status":"paga"}];
+var COMISSOES_INI = [{"id":"cm1","afiliado":"afiliado_joao","pedido":"PED-88423951","produto":"Wireless earbuds","totalPedido":659.98,"percentual":10,"valor":66,"status":"pendente","data":"2026-10-29T15:40:23.951Z"}];
+function load(k, d) { try { var v = localStorage.getItem('vp_' + k); return v ? JSON.parse(v) : d; } catch (e) { return d; } }
+function save(k, v) { try { localStorage.setItem('vp_' + k, JSON.stringify(v)); } catch (e) {} }
+var pedidos = load('pedidos', PEDIDOS_INI);
+var clientes = load('clientes', CLIENTES_INI);
+var faturas = load('faturas', FATURAS_INI);
+var comissoes = load('comissoes', COMISSOES_INI);
+function brl(v) { return 'R$ ' + (Math.round((v || 0) * 100) / 100).toFixed(2).replace('.', ','); }
+function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+function fmtData(iso) { if (!iso) return ''; try { var d = new Date(iso); return d.toLocaleDateString('pt-BR'); } catch (e) { return ''; } }
+function toast(msg) { var t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show'); setTimeout(function () { t.classList.remove('show'); }, 2200); }
+function badge(s) { return '<span class="badge b-' + esc(s) + '">' + esc(s) + '</span>'; }
+function showTab(name) {
+  var tabs = ['inicio', 'produtos', 'pedidos', 'clientes', 'faturas', 'afiliados'];
+  tabs.forEach(function (t) { document.getElementById('tab-' + t).classList.toggle('active', t === name); });
+  var btns = document.querySelectorAll('nav button');
+  btns.forEach(function (b) { b.classList.toggle('on', b.getAttribute('data-tab') === name); });
+  window.scrollTo(0, 0);
+}
+document.querySelectorAll('nav button').forEach(function (b) { b.addEventListener('click', function () { showTab(b.getAttribute('data-tab')); }); });
+function renderInicio() {
+  var pagos = ['pago', 'enviado', 'entregue'];
+  var vendidos = pedidos.filter(function (p) { return pagos.indexOf(p.status) >= 0; });
+  var receita = vendidos.reduce(function (s, p) { return s + (p.total || 0); }, 0);
+  var custo = vendidos.reduce(function (s, p) { return s + (p.custoTotal || 0); }, 0);
+  var lucro = receita - custo;
+  var margem = receita > 0 ? Math.round((lucro / receita) * 100) : 0;
+  var comPend = comissoes.filter(function (c) { return c.status === 'pendente'; });
+  var comVal = comPend.reduce(function (s, c) { return s + (c.valor || 0); }, 0);
+  var fatPend = faturas.filter(function (f) { return f.status === 'pendente'; });
+  var fatVal = fatPend.reduce(function (s, f) { return s + (f.valor || 0); }, 0);
+  var totalGasto = clientes.reduce(function (s, c) { return s + (c.totalGasto || 0); }, 0);
+  var porProd = {};
+  pedidos.forEach(function (p) { if (!porProd[p.produto]) porProd[p.produto] = { qtd: 0, rec: 0 }; porProd[p.produto].qtd += (p.quantidade || 1); porProd[p.produto].rec += (p.total || 0); });
+  var top = Object.keys(porProd).map(function (k) { return { nome: k, qtd: porProd[k].qtd, rec: porProd[k].rec }; }).sort(function (a, b) { return b.rec - a.rec; }).slice(0, 3);
+  var html = '';
+  html += '<div class="kpis">';
+  html += '<div class="kpi accent"><div class="dot"></div><div class="lbl">Receita</div><div class="val">' + brl(receita) + '</div><div class="sub">' + vendidos.length + ' venda(s) paga(s)</div></div>';
+  html += '<div class="kpi"><div class="lbl">Lucro estimado</div><div class="val up">' + brl(lucro) + '</div><div class="sub">margem ' + margem + '%</div></div>';
+  html += '<div class="kpi"><div class="lbl">Clientes</div><div class="val">' + clientes.length + '</div><div class="sub">' + brl(totalGasto) + ' acumulado</div></div>';
+  html += '<div class="kpi"><div class="lbl">Pedidos</div><div class="val">' + pedidos.length + '</div><div class="sub">' + brl(custo) + ' em custos</div></div>';
+  html += '<div class="kpi"><div class="lbl">Comissões pend.</div><div class="val" style="color:var(--warn)">' + brl(comVal) + '</div><div class="sub">' + comPend.length + ' registro(s)</div></div>';
+  html += '<div class="kpi"><div class="lbl">Faturas pend.</div><div class="val" style="color:var(--info)">' + brl(fatVal) + '</div><div class="sub">' + fatPend.length + ' em aberto</div></div>';
+  html += '</div>';
+  html += '<div class="card"><h2>📈 Top produtos <span class="badge">por receita</span></h2>';
+  if (top.length === 0) { html += '<div class="empty">Nenhuma venda ainda</div>'; }
+  top.forEach(function (t) { html += '<div class="row" style="padding:7px 0;border-bottom:1px solid var(--line)"><div class="grow"><div style="font-weight:600;font-size:13.5px">' + esc(t.nome) + '</div><div class="mut small">' + t.qtd + ' unidade(s)</div></div><div class="price">' + brl(t.rec) + '</div></div>'; });
+  html += '</div>';
+  html += '<div class="card"><h2>🧾 Últimos pedidos</h2>';
+  if (pedidos.length === 0) { html += '<div class="empty">Nenhum pedido</div>'; }
+  pedidos.slice().sort(function (a, b) { return String(b.data).localeCompare(String(a.data)); }).slice(0, 3).forEach(function (p) { html += '<div class="row" style="padding:8px 0;border-bottom:1px solid var(--line)"><div class="grow"><div style="font-weight:600;font-size:13.5px">' + esc(p.numero) + ' · ' + esc(p.produto) + '</div><div class="mut small">' + esc(p.cliente) + ' · ' + fmtData(p.data) + '</div></div><div style="text-align:right"><div class="price">' + brl(p.total) + '</div><div style="margin-top:3px">' + badge(p.status) + '</div></div></div>'; });
+  html += '</div>';
+  html += '<div class="card"><h2>🤝 Afiliados & comissões</h2>';
+  html += '<div class="row"><div class="grow"><div style="font-weight:600">' + comissoes.length + ' comissão(ões)</div><div class="mut small">' + brl(comVal) + ' pendente(s) de pagamento</div></div><button class="btn ghost sm" onclick="showTab('afiliados')">Ver afiliados</button></div>';
+  html += '</div>';
+  document.getElementById('tab-inicio').innerHTML = html;
+}
+var buscaProd = ''; var nichoAtivo = 'todos';
+function nichos() { var set = {}; PRODUTOS.forEach(function (p) { set[p.nicho] = true; }); return Object.keys(set).sort(); }
+function renderProdutos() {
+  var lista = PRODUTOS.filter(function (p) { var okBusca = !buscaProd || p.nome.toLowerCase().indexOf(buscaProd.toLowerCase()) >= 0 || p.descricao.toLowerCase().indexOf(buscaProd.toLowerCase()) >= 0; var okNicho = nichoAtivo === 'todos' || p.nicho === nichoAtivo; return okBusca && okNicho; });
+  var html = '';
+  html += '<h2>📦 Catálogo <span class="badge">' + PRODUTOS.length + ' produtos</span></h2>';
+  html += '<div class="search"><span class="ic">🔍</span><input id="buscaProd" placeholder="Buscar produto…" value="' + esc(buscaProd) + '"></div>';
+  html += '<div class="chips">';
+  html += '<div class="chip' + (nichoAtivo === 'todos' ? ' on' : '') + '" onclick="setNicho('todos')">Todos</div>';
+  nichos().forEach(function (n) { html += '<div class="chip' + (nichoAtivo === n ? ' on' : '') + '" onclick="setNicho('' + n + '')">' + esc(n) + '</div>'; });
+  html += '</div>';
+  if (lista.length === 0) { html += '<div class="empty">Nenhum produto encontrado</div>'; }
+  lista.forEach(function (p) {
+    html += '<div class="prod">';
+    html += '<div class="top"><div><div class="nome">' + esc(p.nome) + '</div><div class="nicho">' + esc(p.nicho) + '</div></div><div class="margem">' + p.margem + '% margem</div></div>';
+    html += '<div class="desc">' + esc(p.descricao) + '</div>';
+    html += '<div class="meta"><div><div class="price">' + brl(p.precoBrl) + '</div><div class="mut small">custo ' + brl(p.custoBrl) + ' · lucro ' + brl(p.lucroBrl) + '</div></div><div class="forn">' + esc(p.fornecedores) + '</div></div>';
+    html += '</div>';
+  });
+  document.getElementById('tab-produtos').innerHTML = html;
+  var inp = document.getElementById('buscaProd');
+  if (inp) inp.addEventListener('input', function () { buscaProd = inp.value; renderProdutos(); });
+}
+function setNicho(n) { nichoAtivo = n; renderProdutos(); }
+function renderPedidos() {
+  var html = '';
+  html += '<h2>🧾 Pedidos <span class="badge">' + pedidos.length + '</span></h2>';
+  html += '<button class="btn" onclick="abrirNovoPedido()">＋ Novo pedido</button>';
+  html += '<div style="height:12px"></div>';
+  if (pedidos.length === 0) { html += '<div class="empty">Nenhum pedido registrado</div>'; }
+  pedidos.slice().sort(function (a, b) { return String(b.data).localeCompare(String(a.data)); }).forEach(function (p) {
+    html += '<div class="pedido">';
+    html += '<div class="top"><span class="num">' + esc(p.numero) + '</span>' + badge(p.status) + '</div>';
+    html += '<div class="prod">' + esc(p.produto) + ' × ' + p.quantidade + '</div>';
+    html += '<div class="det">' + esc(p.cliente) + ' · ' + fmtData(p.data) + (p.afiliado ? ' · afiliado: ' + esc(p.afiliado) : '') + '</div>';
+    html += '<div class="foot"><div><div class="price">' + brl(p.total) + '</div><div class="mut small">custo ' + brl(p.custoTotal) + ' · lucro ' + brl(p.lucro) + '</div></div></div>';
+    html += '<div class="statusbar">';
+    ['novo', 'pago', 'enviado', 'entregue', 'cancelado'].forEach(function (s) { html += '<button class="btn sm ' + (p.status === s ? 'ghost' : '') + '" onclick="setStatus('' + p.id + '','' + s + '')">' + s + '</button>'; });
+    html += '</div>';
+    html += '</div>';
+  });
+  document.getElementById('tab-pedidos').innerHTML = html;
+}
+function setStatus(id, s) { var p = pedidos.find(function (x) { return x.id === id; }); if (!p) return; p.status = s; save('pedidos', pedidos); renderPedidos(); renderInicio(); toast('Pedido ' + p.numero + ' → ' + s); }
+function abrirNovoPedido() {
+  var opts = PRODUTOS.map(function (p) { return '<option value="' + esc(p.nome) + '">' + esc(p.nome) + ' — ' + brl(p.precoBrl) + '</option>'; }).join('');
+  var html = '';
+  html += '<span class="close" onclick="fecharModal()">×</span>';
+  html += '<h3>Novo pedido</h3><div class="mut small">O preço é calculado do catálogo</div>';
+  html += '<label>Produto</label><select id="npProd">' + opts + '</select>';
+  html += '<label>Quantidade</label><input id="npQtd" type="number" value="1" min="1">';
+  html += '<label>Cliente</label><input id="npCli" placeholder="Nome do cliente">';
+  html += '<label>Email</label><input id="npEmail" type="email" placeholder="email@cliente.com">';
+  html += '<label>Afiliado (opcional)</label><input id="npAfi" placeholder="afiliado_joao">';
+  html += '<button class="btn" onclick="salvarPedido()">Registrar pedido</button>';
+  abrirModal(html);
+}
+function salvarPedido() {
+  var nome = document.getElementById('npProd').value;
+  var qtd = parseInt(document.getElementById('npQtd').value, 10) || 1;
+  var cli = document.getElementById('npCli').value.trim();
+  var email = document.getElementById('npEmail').value.trim();
+  var afi = document.getElementById('npAfi').value.trim();
+  if (!cli) { toast('Informe o nome do cliente'); return; }
+  var prod = PRODUTOS.find(function (p) { return p.nome === nome; });
+  if (!prod) { toast('Produto inválido'); return; }
+  var total = Math.round(prod.precoBrl * qtd * 100) / 100;
+  var custo = Math.round(prod.custoBrl * qtd * 100) / 100;
+  var ped = { id: 'p' + Date.now(), numero: 'PED-' + String(Date.now()).slice(-8), produto: nome, quantidade: qtd, precoUnitario: prod.precoBrl, total: total, custoTotal: custo, lucro: Math.round((total - custo) * 100) / 100, cliente: cli, email: email, afiliado: afi || null, status: 'novo', data: new Date().toISOString() };
+  pedidos.unshift(ped); save('pedidos', pedidos); fecharModal(); renderPedidos(); renderInicio(); toast('Pedido ' + ped.numero + ' registrado');
+}
+function renderClientes() {
+  var html = '';
+  html += '<h2>👥 Clientes <span class="badge">' + clientes.length + '</span></h2>';
+  html += '<button class="btn" onclick="abrirNovoCliente()">＋ Novo cliente</button>';
+  html += '<div style="height:12px"></div>';
+  if (clientes.length === 0) { html += '<div class="empty">Nenhum cliente cadastrado</div>'; }
+  clientes.forEach(function (c) {
+    var compras = pedidos.filter(function (p) { return (p.email || '').toLowerCase() === (c.email || '').toLowerCase() || (p.cliente || '').toLowerCase() === (c.nome || '').toLowerCase(); });
+    html += '<div class="cliente">';
+    html += '<div class="row"><div class="grow"><div class="nome">' + esc(c.nome) + '</div><div class="det">' + esc(c.email) + (c.telefone ? ' · ' + esc(c.telefone) : '') + '</div><div class="det">' + esc(c.cidade) + (c.origem ? ' · origem: ' + esc(c.origem) : '') + '</div></div>' + badge(c.status) + '</div>';
+    html += '<div class="stats"><div><div class="mut small">Total gasto</div><b>' + brl(c.totalGasto) + '</b></div><div><div class="mut small">Pedidos</div><b>' + c.numPedidos + '</b></div><div><div class="mut small">Compras no app</div><b>' + compras.length + '</b></div></div>';
+    html += '</div>';
+  });
+  document.getElementById('tab-clientes').innerHTML = html;
+}
+function abrirNovoCliente() {
+  var html = '';
+  html += '<span class="close" onclick="fecharModal()">×</span>';
+  html += '<h3>Novo cliente</h3>';
+  html += '<label>Nome *</label><input id="ncNome" placeholder="Nome completo">';
+  html += '<label>Email *</label><input id="ncEmail" type="email" placeholder="email@cliente.com">';
+  html += '<label>Telefone / WhatsApp</label><input id="ncTel" placeholder="(11) 99999-9999">';
+  html += '<label>Cidade / UF</label><input id="ncCid" placeholder="São Paulo - SP">';
+  html += '<label>Origem do lead</label><input id="ncOri" placeholder="Instagram, afiliado, site…">';
+  html += '<button class="btn" onclick="salvarCliente()">Cadastrar cliente</button>';
+  abrirModal(html);
+}
+function salvarCliente() {
+  var nome = document.getElementById('ncNome').value.trim();
+  var email = document.getElementById('ncEmail').value.trim().toLowerCase();
+  if (!nome || !email) { toast('Nome e email são obrigatórios'); return; }
+  var dup = clientes.find(function (c) { return c.email === email; });
+  if (dup) { toast('Cliente já cadastrado'); fecharModal(); return; }
+  var cli = { id: 'c' + Date.now(), nome: nome, email: email, telefone: document.getElementById('ncTel').value.trim(), cidade: document.getElementById('ncCid').value.trim(), origem: document.getElementById('ncOri').value.trim(), status: 'ativo', totalGasto: 0, numPedidos: 0, dataCadastro: new Date().toISOString() };
+  clientes.push(cli); save('clientes', clientes); fecharModal(); renderClientes(); renderInicio(); toast('Cliente ' + nome + ' cadastrado');
+}
+function renderFaturas() {
+  var html = '';
+  html += '<h2>💳 Faturas <span class="badge">' + faturas.length + '</span></h2>';
+  if (faturas.length === 0) { html += '<div class="empty">Nenhuma fatura</div>'; }
+  faturas.forEach(function (f) {
+    html += '<div class="fatura">';
+    html += '<div class="top"><span class="num">' + esc(f.numero) + '</span>' + badge(f.status) + '</div>';
+    html += '<div class="det">Pedido ' + esc(f.pedido) + ' · ' + esc(f.cliente) + '</div>';
+    html += '<div class="det">Vencimento ' + fmtData(f.vencimento) + ' · ' + esc(f.forma) + '</div>';
+    html += '<div class="val">' + brl(f.valor) + '</div>';
+    html += '</div>';
+  });
+  document.getElementById('tab-faturas').innerHTML = html;
+}
+function renderAfiliados() {
+  var grupos = {};
+  comissoes.forEach(function (c) { if (!grupos[c.afiliado]) grupos[c.afiliado] = { total: 0, pend: 0, n: 0 }; grupos[c.afiliado].total += (c.valor || 0); if (c.status === 'pendente') grupos[c.afiliado].pend += (c.valor || 0); grupos[c.afiliado].n += 1; });
+  var html = '';
+  html += '<h2>🤝 Afiliados & comissões</h2>';
+  html += '<button class="btn ghost" onclick="showTab('inicio')">← Voltar ao início</button>';
+  html += '<div style="height:12px"></div>';
+  var chaves = Object.keys(grupos);
+  if (chaves.length === 0) { html += '<div class="empty">Nenhuma comissão registrada</div>'; }
+  chaves.forEach(function (a) {
+    var g = grupos[a];
+    html += '<div class="afiliado">';
+    html += '<div class="nome">' + esc(a) + '</div>';
+    html += '<div class="det">' + g.n + ' comissão(ões) registrada(s)</div>';
+    html += '<div class="val">' + brl(g.pend) + ' pendente</div>';
+    html += '<div class="mut small">total gerado: ' + brl(g.total) + '</div>';
+    html += '</div>';
+  });
+  html += '<div class="card"><h2>Detalhe das comissões</h2>';
+  comissoes.forEach(function (c) { html += '<div class="row" style="padding:7px 0;border-bottom:1px solid var(--line)"><div class="grow"><div style="font-weight:600;font-size:13px">' + esc(c.pedido) + ' · ' + esc(c.produto) + '</div><div class="mut small">' + esc(c.afiliado) + ' · ' + c.percentual + '% · ' + fmtData(c.data) + '</div></div><div style="text-align:right"><div class="price">' + brl(c.valor) + '</div><div style="margin-top:2px">' + badge(c.status) + '</div></div></div>'; });
+  html += '</div>';
+  document.getElementById('tab-afiliados').innerHTML = html;
+}
+function abrirModal(html) { document.getElementById('modalBody').innerHTML = html; document.getElementById('modal').classList.add('open'); }
+function fecharModal() { document.getElementById('modal').classList.remove('open'); }
+document.getElementById('modal').addEventListener('click', function (e) { if (e.target === this) fecharModal(); });
+renderInicio(); renderProdutos(); renderPedidos(); renderClientes(); renderFaturas(); renderAfiliados();
+</script>
+</body>
+</html>
